@@ -36,6 +36,7 @@ Plot Twist: Habran momentos aleatorios en donde: Asalten tus territorios (Defend
 -------------------------------------------------------------------------------------
 Posibles Historias/ Misiones de personajes: Por ejemplo, una trama de 7 misiones para nick, en donde va a un planeta, lo secuestran y lo obligan a pelear y escaparse del planeta, es un ejemplo
 -------------------------------------------------------------------------------------
-Facilidad para agregar personajes: Esto tiene dos puntos, creacion de personaje inegrado en el juego, por si los de consolas quieren hacer sus propios personajes, y luego esta pc, dar mas facilidad para crear personajes, facciones, historias/ misiones, esto seria perfecto para que el jeugo sea relevante gracias a mods y abre posibilidades infinitas para divertirte con el juego
+Facilidad para agregar personajes: Esto tiene dos puntos, creacion de personaje inegrado en el juego, por si los de consolas quieren hacer sus propios personajes, y luego esta pc, dar mas facilidad para crear personajes, facciones, historias/ misiones, esto seria perfecto para que el juego sea relevante gracias a mods y abre posibilidades infinitas para divertirte con el juego
 -------------------------------------------------------------------------------------
 Scope: el tiempo estimado es de... un año o mas, se iniciara el desarrollo por completo cuando se termine el Barrys mirror dimension y su seria, todo depende de la disponibilidad de anonim, Guillen (ellos me dijeron que estaban metidos en el proyecto) y si termino el barry juego antes de que salga la serie
+---------------------------------------------------------------------------------------
