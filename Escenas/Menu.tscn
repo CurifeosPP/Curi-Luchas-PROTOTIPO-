@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bcfmhgo2fl4du"]
+
+[ext_resource type="Texture2D" uid="uid://bm6vf3potwto0" path="res://Fondos/converted_image.png" id="1_xe2ru"]
+[ext_resource type="Script" uid="uid://cfdiautt0a328" path="res://Scripts/menu.gd" id="1_xhjix"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhjix"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2l53"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_425bc"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" unique_id=910027893]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhjix")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=233372803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xe2ru")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1367378545]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 713.0
+offset_top = -191.0
+offset_right = -737.0
+offset_bottom = 316.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+
+[node name="Jugar" type="Button" parent="VBoxContainer" unique_id=487423959]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_xhjix")
+text = "JUGAR!"
+
+[node name="Opciones" type="Button" parent="VBoxContainer" unique_id=1077476971]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_o2l53")
+text = "Opciones"
+
+[node name="Salir" type="Button" parent="VBoxContainer" unique_id=2146403485]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_425bc")
+text = "Salir"
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1470331262]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 411.0
+offset_top = 4.0
+offset_right = -247.0
+offset_bottom = -868.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 150
+text = "CURI LUCHAS!"
+
+[node name="TextEdit2" type="TextEdit" parent="." unique_id=1687875339]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 653.0
+offset_top = 214.0
+offset_right = -242.0
+offset_bottom = -766.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "(Prototipo de testeo)"
+
+[connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

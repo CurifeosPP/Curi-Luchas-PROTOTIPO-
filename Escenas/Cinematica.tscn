@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://707b4qb6id2k"]
+
+[ext_resource type="Script" uid="uid://blfoquw0afpa5" path="res://Scripts/cinematica.gd" id="1_8t7me"]
+[ext_resource type="Texture2D" uid="uid://nogrblpp4obm" path="res://Fondos/Screenshot 2026-02-26 200642.png" id="2_2kbp4"]
+
+[node name="Node2D" type="Node2D" unique_id=185915566]
+script = ExtResource("1_8t7me")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=911944903]
+position = Vector2(961.74994, 493.25)
+scale = Vector2(0.8049748, 0.77349627)
+texture = ExtResource("2_2kbp4")
