@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 
 DialogueManager="*uid://c3rodes2l3gxb"
 Fade="*uid://brpjuwbkv43a4"
+GameData="*uid://beg3xc7m30dua"
 
 [dialogue_manager]
 

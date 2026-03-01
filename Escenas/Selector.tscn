@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cupt4gqlwh85j"]
+
+[ext_resource type="Texture2D" uid="uid://krprcp1c4gw8" path="res://Fondos/360_F_794001489_hFZiTBE14nbZamwMxLJbr07kmQ00sA0d.jpg" id="1_5g3id"]
+[ext_resource type="Script" uid="uid://dxtfllovfh2ja" path="res://Scripts/Seleccion de personaje/selector.gd" id="1_mgjp3"]
+
+[node name="Control" type="Control" unique_id=382053737]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mgjp3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1875958283]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5g3id")
+
+[node name="Panel" type="Panel" parent="." unique_id=196561553]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=1991356450]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ryu" type="Button" parent="Panel/GridContainer" unique_id=254493478]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Alan"
+
+[node name="Scorpion" type="Button" parent="Panel/GridContainer" unique_id=579301952]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Jesus"
+
+[node name="ListoButton" type="Button" parent="Panel/GridContainer" unique_id=156060807]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9524457, 0.9524458, 3.85046e-06, 1)
+theme_override_font_sizes/font_size = 100
+disabled = true
+text = "Listo"
+
+[node name="SelectedLabel" type="Label" parent="." unique_id=1528002423]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 113.0
+offset_right = 1450.0
+offset_bottom = 209.0
+theme_override_font_sizes/font_size = 70
+text = "SELECCIONA AL PERSONAJE!"
+
+[connection signal="pressed" from="Panel/GridContainer/Ryu" to="." method="_on_ryu_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/Scorpion" to="." method="_on_scorpion_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/ListoButton" to="." method="_on_listo_button_pressed"]

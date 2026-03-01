@@ -1,6 +1,7 @@
 extends Control
 
 
+
 func _on_jugar_pressed() -> void:
 	Fade.change_scene("res://Escenas/Cinematica.tscn")
 

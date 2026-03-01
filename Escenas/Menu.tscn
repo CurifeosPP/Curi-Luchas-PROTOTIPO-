@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bcfmhgo2fl4du"]
 
 [ext_resource type="Texture2D" uid="uid://bm6vf3potwto0" path="res://Fondos/converted_image.png" id="1_xe2ru"]
-[ext_resource type="Script" uid="uid://cfdiautt0a328" path="res://Scripts/menu.gd" id="1_xhjix"]
+[ext_resource type="Script" uid="uid://cfdiautt0a328" path="res://Scripts/Menu y transicion/menu.gd" id="1_xhjix"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhjix"]
 bg_color = Color(0, 0, 0, 1)
@@ -88,7 +88,7 @@ offset_bottom = -766.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 70
-text = "(Prototipo de testeo)"
+text = "(Prototipo de joda)"
 
 [connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brpjuwbkv43a4"]
 
-[ext_resource type="Script" uid="uid://cld81ej61isk1" path="res://Scripts/fader_layer.gd" id="1_7ecqb"]
+[ext_resource type="Script" uid="uid://cld81ej61isk1" path="res://Scripts/Menu y transicion/fader_layer.gd" id="1_7ecqb"]
 
 [sub_resource type="Animation" id="Animation_yhw1s"]
 resource_name = "Fade Im"
