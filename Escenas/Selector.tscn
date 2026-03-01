@@ -37,12 +37,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Ryu" type="Button" parent="Panel/GridContainer" unique_id=254493478]
+[node name="Alan" type="Button" parent="Panel/GridContainer" unique_id=254493478]
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
 text = "Alan"
 
-[node name="Scorpion" type="Button" parent="Panel/GridContainer" unique_id=579301952]
+[node name="Jesus" type="Button" parent="Panel/GridContainer" unique_id=579301952]
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
 text = "Jesus"
@@ -63,6 +63,6 @@ offset_bottom = 209.0
 theme_override_font_sizes/font_size = 70
 text = "SELECCIONA AL PERSONAJE!"
 
-[connection signal="pressed" from="Panel/GridContainer/Ryu" to="." method="_on_ryu_pressed"]
-[connection signal="pressed" from="Panel/GridContainer/Scorpion" to="." method="_on_scorpion_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/Alan" to="." method="_on_alan_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/Jesus" to="." method="_on_jesus_pressed"]
 [connection signal="pressed" from="Panel/GridContainer/ListoButton" to="." method="_on_listo_button_pressed"]

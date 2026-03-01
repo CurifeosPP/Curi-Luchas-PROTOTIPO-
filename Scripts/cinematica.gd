@@ -2,7 +2,7 @@ extends Node2D
 
 @export var dialogue_path: String = "res://Dialogo/untitled.dialogue"
 @export var start_node: String = ""
-@export var next_scene_path: String = "res://Escenas/Menu.tscn"
+@export var next_scene_path: String = "res://Escenas/Selector.tscn"
 @export var gameplay_groups: Array = ["gameplay"]
 @export var debug: bool = true
 

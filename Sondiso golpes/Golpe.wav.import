@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bou1fa2pmsfjh"
+path="res://.godot/imported/Golpe.wav-ec7b5e3e629b00f5170666440aa6a331.sample"
+
+[deps]
+
+source_file="res://Sondiso golpes/Golpe.wav"
+dest_files=["res://.godot/imported/Golpe.wav-ec7b5e3e629b00f5170666440aa6a331.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

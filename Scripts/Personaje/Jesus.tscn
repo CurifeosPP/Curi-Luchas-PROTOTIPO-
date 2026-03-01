@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c37w1nata6hbu"]
+
+[ext_resource type="Script" uid="uid://ds0aihrbdujpl" path="res://Scripts/Personaje/jesus.gd" id="1_k12tf"]
+[ext_resource type="Texture2D" uid="uid://cufl4562i307x" path="res://Sprites temporales/Jesus/Sprit jesus.png" id="3_t1lkt"]
+[ext_resource type="AudioStream" uid="uid://bou1fa2pmsfjh" path="res://Sondiso golpes/Golpe.wav" id="4_8vg1y"]
+[ext_resource type="Texture2D" uid="uid://dj3ygbeh6yhsv" path="res://Sprites temporales/28-281483_batman-pow-clipart-comic-book-bubbles-pow.png" id="4_ku51b"]
+[ext_resource type="AudioStream" uid="uid://clynv77wovv7o" path="res://Sondiso golpes/GolpeAire.wav" id="5_l6h74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs74m"]
+size = Vector2(93, 92.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5w5gp"]
+radius = 29.0
+height = 124.0
+
+[node name="Jesus" type="CharacterBody2D" unique_id=1306641810]
+position = Vector2(1685.74, 717)
+up_direction = Vector2(1, 0)
+script = ExtResource("1_k12tf")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2128198803]
+position = Vector2(20, -11)
+
+[node name="AttackHitbox" type="CollisionShape2D" parent="Area2D" unique_id=27084448]
+visibility_layer = 2
+position = Vector2(63, 14)
+shape = SubResource("RectangleShape2D_vs74m")
+
+[node name="AttackVisual" type="Sprite2D" parent="Area2D" unique_id=334334110]
+position = Vector2(65, 4.000004)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("4_ku51b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2109731419]
+scale = Vector2(4.06, 4.06)
+texture = ExtResource("3_t1lkt")
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="." unique_id=1817551434]
+position = Vector2(-151.73999, 316)
+scale = Vector2(16.483599, 16.483599)
+stream = ExtResource("4_8vg1y")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=1506856769]
+position = Vector2(-151.73999, 316)
+scale = Vector2(4.06, 4.06)
+stream = ExtResource("5_l6h74")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1502729420]
+position = Vector2(-8, -1)
+shape = SubResource("CapsuleShape2D_5w5gp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1996490807]
+
+[node name="PercentLabel" type="Label" parent="CanvasLayer" unique_id=1590619301]
+offset_left = 1534.0
+offset_top = 1033.0
+offset_right = 1608.0
+offset_bottom = 1056.0
+text = "ALAN: 0%"
+metadata/_edit_use_anchors_ = true

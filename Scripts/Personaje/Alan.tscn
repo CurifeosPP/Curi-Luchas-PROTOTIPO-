@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://x6fwim8accc"]
+
+[ext_resource type="Script" uid="uid://dabc2xe764a7i" path="res://Scripts/Personaje/Alan.gd" id="1_oobaa"]
+[ext_resource type="Texture2D" uid="uid://4wsecgeyu74m" path="res://Sprites temporales/Alan/Sprite-0001.png" id="2_o1k6l"]
+[ext_resource type="Texture2D" uid="uid://dj3ygbeh6yhsv" path="res://Sprites temporales/28-281483_batman-pow-clipart-comic-book-bubbles-pow.png" id="4_inrm6"]
+[ext_resource type="AudioStream" uid="uid://bou1fa2pmsfjh" path="res://Sondiso golpes/Golpe.wav" id="4_o1k6l"]
+[ext_resource type="AudioStream" uid="uid://clynv77wovv7o" path="res://Sondiso golpes/GolpeAire.wav" id="5_jvxc4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs74m"]
+size = Vector2(93, 92.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5w5gp"]
+radius = 29.0
+height = 124.0
+
+[node name="Alan" type="CharacterBody2D" unique_id=1306641810]
+position = Vector2(517, 717)
+script = ExtResource("1_oobaa")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2128198803]
+position = Vector2(20, -11)
+
+[node name="AttackHitbox" type="CollisionShape2D" parent="Area2D" unique_id=27084448]
+visibility_layer = 2
+position = Vector2(63, 14)
+shape = SubResource("RectangleShape2D_vs74m")
+
+[node name="AttackVisual" type="Sprite2D" parent="Area2D" unique_id=334334110]
+position = Vector2(65, 4.000004)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("4_inrm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2109731419]
+scale = Vector2(4.06, 4.06)
+texture = ExtResource("2_o1k6l")
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="." unique_id=1494081213]
+scale = Vector2(16.483599, 16.483599)
+stream = ExtResource("5_jvxc4")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=675000769]
+scale = Vector2(4.06, 4.06)
+stream = ExtResource("4_o1k6l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1502729420]
+position = Vector2(-8, -1)
+shape = SubResource("CapsuleShape2D_5w5gp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=712995736]
+
+[node name="PercentLabel" type="Label" parent="CanvasLayer" unique_id=632873457]
+offset_left = 572.0
+offset_top = 1028.0
+offset_right = 646.0
+offset_bottom = 1051.0
+text = "ALAN: 0%"
+metadata/_edit_use_anchors_ = true

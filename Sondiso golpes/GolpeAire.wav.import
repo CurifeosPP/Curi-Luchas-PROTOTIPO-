@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://clynv77wovv7o"
+path="res://.godot/imported/GolpeAire.wav-1cfd49a5be5f4b48704843db4bc7a87b.sample"
+
+[deps]
+
+source_file="res://Sondiso golpes/GolpeAire.wav"
+dest_files=["res://.godot/imported/GolpeAire.wav-1cfd49a5be5f4b48704843db4bc7a87b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
