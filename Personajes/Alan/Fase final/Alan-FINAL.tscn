@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://d3ni00nx7263l"]
+
+[ext_resource type="Script" uid="uid://30rgirwfptg6" path="res://Personajes/Alan/Fase final/Alan.gd" id="1_tfjik"]
+[ext_resource type="Texture2D" uid="uid://dj3ygbeh6yhsv" path="res://Sprites temporales/28-281483_batman-pow-clipart-comic-book-bubbles-pow.png" id="2_s48e1"]
+[ext_resource type="Texture2D" uid="uid://wtoxkdq6u5kk" path="res://Personajes/Alan/Fase final/deproNAI.png" id="2_xhpbg"]
+[ext_resource type="Texture2D" uid="uid://cqr4yf138y0qt" path="res://Personajes/Alan/Sprite-0003.png" id="3_66of6"]
+[ext_resource type="AudioStream" uid="uid://clynv77wovv7o" path="res://Sondiso golpes/GolpeAire.wav" id="4_66of6"]
+[ext_resource type="AudioStream" uid="uid://bou1fa2pmsfjh" path="res://Sondiso golpes/Golpe.wav" id="5_ia678"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs74m"]
+size = Vector2(93, 92.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5w5gp"]
+radius = 29.0
+height = 124.0
+
+[node name="AlanFINAL" type="CharacterBody2D" unique_id=1306641810]
+position = Vector2(517, 717)
+scale = Vector2(5.435, 5.435)
+script = ExtResource("1_tfjik")
+normal_texture = ExtResource("2_xhpbg")
+block_texture = ExtResource("3_66of6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2128198803]
+position = Vector2(20, -30.12)
+scale = Vector2(0.6, 0.6)
+
+[node name="AttackHitbox" type="CollisionShape2D" parent="Area2D" unique_id=27084448]
+visibility_layer = 2
+position = Vector2(63, 14)
+shape = SubResource("RectangleShape2D_vs74m")
+
+[node name="AttackVisual" type="Sprite2D" parent="Area2D" unique_id=334334110]
+position = Vector2(65, 4.000004)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_s48e1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2109731419]
+position = Vector2(-7.8409076, 6.25)
+scale = Vector2(0.4004329, 0.41564277)
+texture = ExtResource("2_xhpbg")
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="." unique_id=1494081213]
+scale = Vector2(16.483599, 16.483599)
+stream = ExtResource("4_66of6")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=675000769]
+scale = Vector2(4.06, 4.06)
+stream = ExtResource("5_ia678")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1502729420]
+position = Vector2(-8, -1)
+shape = SubResource("CapsuleShape2D_5w5gp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=712995736]
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=2120321363]
+offset_left = 191.00003
+offset_top = -2.0
+offset_right = 343.34595
+offset_bottom = 25.0
+accessibility_name = "HP"
+theme_override_colors/font_color = Color(0, 0.51546264, 0.564747, 1)
+value = 100.0

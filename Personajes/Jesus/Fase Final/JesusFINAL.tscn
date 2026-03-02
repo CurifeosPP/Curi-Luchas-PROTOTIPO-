@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dbc1m0qxmkk2u"]
+
+[ext_resource type="Script" uid="uid://dbxffj0g5sodv" path="res://Personajes/Jesus/Fase Final/jesus_final.gd" id="1_fckso"]
+[ext_resource type="Texture2D" uid="uid://dj3ygbeh6yhsv" path="res://Sprites temporales/28-281483_batman-pow-clipart-comic-book-bubbles-pow.png" id="2_7h7yr"]
+[ext_resource type="Texture2D" uid="uid://dhal041c1gdms" path="res://Personajes/Jesus/Fase Final/2f8b498d84898feb18623f118657162d.png" id="3_0la0d"]
+[ext_resource type="AudioStream" uid="uid://clynv77wovv7o" path="res://Sondiso golpes/GolpeAire.wav" id="4_l5bby"]
+[ext_resource type="AudioStream" uid="uid://bou1fa2pmsfjh" path="res://Sondiso golpes/Golpe.wav" id="5_abm8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs74m"]
+size = Vector2(93, 92.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5w5gp"]
+radius = 29.0
+height = 124.0
+
+[node name="JesusFINAL" type="CharacterBody2D" unique_id=1306641810]
+position = Vector2(517, 717)
+scale = Vector2(5.435, 5.435)
+script = ExtResource("1_fckso")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2128198803]
+position = Vector2(20, -30.12)
+scale = Vector2(0.6, 0.6)
+
+[node name="AttackHitbox" type="CollisionShape2D" parent="Area2D" unique_id=27084448]
+visibility_layer = 2
+position = Vector2(63, 14)
+shape = SubResource("RectangleShape2D_vs74m")
+
+[node name="AttackVisual" type="Sprite2D" parent="Area2D" unique_id=334334110]
+position = Vector2(65, 4.000004)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_7h7yr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2109731419]
+position = Vector2(-8.463657, -1.287954)
+scale = Vector2(0.251672, 0.29464522)
+texture = ExtResource("3_0la0d")
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="." unique_id=1494081213]
+scale = Vector2(16.483599, 16.483599)
+stream = ExtResource("4_l5bby")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=675000769]
+scale = Vector2(4.06, 4.06)
+stream = ExtResource("5_abm8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1502729420]
+position = Vector2(-8, -1)
+shape = SubResource("CapsuleShape2D_5w5gp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=712995736]
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=2120321363]
+offset_left = 1018.0
+offset_top = 7.999939
+offset_right = 1170.346
+offset_bottom = 34.99994
+accessibility_name = "HP"
+theme_override_colors/font_color = Color(0, 0.51546264, 0.564747, 1)
+value = 100.0
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1731726657]
+position = Vector2(57.773693, 61.637535)
+scale = Vector2(0.18399264, 0.18399264)
+target_position = Vector2(0, 111)

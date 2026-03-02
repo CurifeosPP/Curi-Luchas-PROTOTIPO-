@@ -1,6 +1,40 @@
 [gd_scene format=3 uid="uid://d03s6jj2buq7f"]
 
 [ext_resource type="Script" uid="uid://dvfw3nfkjkk4o" path="res://Scripts/battle_final.gd" id="1_sua3o"]
+[ext_resource type="Texture2D" uid="uid://ok4fiiclhlij" path="res://Fondos/Fondo final.png" id="2_34b7c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1a33"]
+size = Vector2(1921, 27)
 
 [node name="BattleFinal" type="Node2D" unique_id=1974774518]
 script = ExtResource("1_sua3o")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1507602073]
+offset_left = 5.0
+offset_right = 1925.0
+offset_bottom = 1080.0
+texture = ExtResource("2_34b7c")
+
+[node name="Colisiones fondo" type="StaticBody2D" parent="." unique_id=1036022200]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisiones fondo" unique_id=1648345709]
+position = Vector2(967.5, 1086.5)
+shape = SubResource("RectangleShape2D_g1a33")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1106964564]
+position = Vector2(936, 2)
+
+[node name="P1Spawn" type="Node2D" parent="SpawnPoints" unique_id=1591652177]
+position = Vector2(-673, 737)
+
+[node name="P2Spawn" type="Node2D" parent="SpawnPoints" unique_id=945013048]
+position = Vector2(694, 726)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1477653692]
+
+[node name="ResultLabel" type="Label" parent="CanvasLayer" unique_id=189696209]
+offset_left = 795.0
+offset_top = 135.0
+offset_right = 1201.0
+offset_bottom = 231.0
+theme_override_font_sizes/font_size = 50
