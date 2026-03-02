@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvj8o38npeheg"
-path="res://.godot/imported/Sprite-jesus block.png-6b80243ef84d5c534c6b22df0bf178b8.ctex"
+path="res://.godot/imported/Sprite-jesus block.png-b69e7265c40d5f8deee58ed6faa0017f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites temporales/Jesus/Sprite-jesus block.png"
-dest_files=["res://.godot/imported/Sprite-jesus block.png-6b80243ef84d5c534c6b22df0bf178b8.ctex"]
+source_file="res://Personajes/Jesus/Sprite-jesus block.png"
+dest_files=["res://.godot/imported/Sprite-jesus block.png-b69e7265c40d5f8deee58ed6faa0017f.ctex"]
 
 [params]
 

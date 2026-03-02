@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4wsecgeyu74m"
-path="res://.godot/imported/Sprite-0001.png-558ea15f49bb657b149edf844395d3ba.ctex"
+uid="uid://cufl4562i307x"
+path="res://.godot/imported/Sprit jesus.png-e62744144e364b493cce8f49c1c63289.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites temporales/Alan/Sprite-0001.png"
-dest_files=["res://.godot/imported/Sprite-0001.png-558ea15f49bb657b149edf844395d3ba.ctex"]
+source_file="res://Personajes/Jesus/Sprit jesus.png"
+dest_files=["res://.godot/imported/Sprit jesus.png-e62744144e364b493cce8f49c1c63289.ctex"]
 
 [params]
 

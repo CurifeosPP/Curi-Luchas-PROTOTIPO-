@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqr4yf138y0qt"
-path="res://.godot/imported/Sprite-0003.png-9dab15400b3943e7ffd0856b34c15d4f.ctex"
+uid="uid://4wsecgeyu74m"
+path="res://.godot/imported/Sprite-0001.png-732e4c4447ed26bcb1c67ab1bd36d170.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites temporales/Alan/Sprite-0003.png"
-dest_files=["res://.godot/imported/Sprite-0003.png-9dab15400b3943e7ffd0856b34c15d4f.ctex"]
+source_file="res://Personajes/Alan/Sprite-0001.png"
+dest_files=["res://.godot/imported/Sprite-0001.png-732e4c4447ed26bcb1c67ab1bd36d170.ctex"]
 
 [params]
 

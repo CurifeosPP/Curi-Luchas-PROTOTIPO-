@@ -1,49 +1,20 @@
 extends Node2D
 
-# =========================
-# SPAWNS
-# =========================
-
 @onready var p1_spawn = $SpawnPoints/P1Spawn
 @onready var p2_spawn = $SpawnPoints/P2Spawn
-
-# =========================
-# UI
-# =========================
-
 @onready var score_label = $CanvasLayer/ScoreLabel
 
-# =========================
-# ESCENAS
-# =========================
-
-var alan_scene = preload("res://Scripts/Personaje/Alan.tscn")
-var jesus_scene = preload("res://Scripts/Personaje/Jesus.tscn")
-
-# =========================
-# REFERENCIAS
-# =========================
+var alan_scene = preload("res://Personajes/Alan/Scripts/Alan.tscn")
+var jesus_scene = preload("res://Personajes/Jesus/Scripts/Jesus.tscn")
 
 var p1
 var p2
 
-# =========================
-# RONDAS
-# =========================
-
 var p1_rounds: int = 0
 var p2_rounds: int = 0
-var max_rounds: int = 2  # Mejor de 3
-
-# =========================
-# LÍMITE DE CAÍDA
-# =========================
+var max_rounds: int = 2
 
 var fall_limit: float = 1200.0
-
-# =========================
-# READY
-# =========================
 
 func _ready():
 	update_score_label()
@@ -90,34 +61,41 @@ func player_lost(loser):
 		p1_rounds += 1
 
 	update_score_label()
+
+	await get_tree().create_timer(1.0).timeout
+
 	check_match_end()
 
 # =========================
-# ACTUALIZAR MARCADOR
+# SCORE
 # =========================
 
 func update_score_label():
 	score_label.text = "ALAN " + str(p1_rounds) + " - " + str(p2_rounds) + " JESUS"
 
 # =========================
-# FIN DE PARTIDA
+# FIN / TRANSICIONES
 # =========================
 
 func check_match_end():
 
-	if p1_rounds >= max_rounds:
-		score_label.text = "🔥 ALAN GANA 🔥"
+	# 🔥 SI ALGUIEN LLEGA A 2 → IR A RONDA FINAL (OTRA ESCENA)
+	if p1_rounds >= max_rounds or p2_rounds >= max_rounds:
+
+		score_label.text = "⚠️ FINAL ROUND ⚠️"
+
+		await get_tree().create_timer(1.5).timeout
+
+		# 🔥 CAMBIO DE ESCENA CON FADE
+		Fade.change_scene("res://Escenas/battle_final.tscn")
 		return
 
-	if p2_rounds >= max_rounds:
-		score_label.text = "🔥 JESUS GANA 🔥"
-		return
-
-	await get_tree().create_timer(2.0).timeout
+	# 🔥 SIGUIENTE RONDA NORMAL
+	await get_tree().create_timer(1.0).timeout
 	reset_round()
 
 # =========================
-# REINICIAR RONDA
+# RESET
 # =========================
 
 func reset_round():
