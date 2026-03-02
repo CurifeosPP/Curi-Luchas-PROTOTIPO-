@@ -68,6 +68,20 @@ offset_bottom = 209.0
 theme_override_font_sizes/font_size = 70
 text = "SELECCIONA AL PERSONAJE!"
 
+[node name="SelectedLabel2" type="Label" parent="." unique_id=1369359406]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 223.0
+offset_right = 1591.0
+offset_bottom = 674.0
+theme_override_font_sizes/font_size = 50
+text = "Botones:
+A: izquierda
+D: derecha
+C: Atacar
+W: saltar
+Espacio: bloquear (ni idea si funciona)"
+
 [connection signal="pressed" from="Panel/GridContainer/Alan" to="." method="_on_alan_pressed"]
 [connection signal="pressed" from="Panel/GridContainer/Jesus" to="." method="_on_jesus_pressed"]
 [connection signal="pressed" from="Panel/GridContainer/ListoButton" to="." method="_on_listo_button_pressed"]

@@ -33,8 +33,9 @@ runtime/balloon_path="res://Dialogo/balloon.tscn"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=2
+window/size/mode=3
 window/size/borderless=true
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
