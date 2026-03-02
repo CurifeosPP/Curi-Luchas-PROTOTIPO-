@@ -43,6 +43,4 @@ func _on_player_dead(winner_name):
 	if result_label:
 		result_label.text = "🔥 " + winner_name + " GANA 🔥"
 
-	await get_tree().create_timer(2.0).timeout
-
 	Fade.change_scene("res://Escenas/menu.tscn")

@@ -14,12 +14,12 @@ radius = 29.0
 height = 124.0
 
 [node name="JesusFINAL" type="CharacterBody2D" unique_id=1306641810]
-position = Vector2(517, 717)
+position = Vector2(1655.245, 717)
 scale = Vector2(5.435, 5.435)
 script = ExtResource("1_fckso")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2128198803]
-position = Vector2(20, -30.12)
+position = Vector2(-110.195, -30.12)
 scale = Vector2(0.6, 0.6)
 
 [node name="AttackHitbox" type="CollisionShape2D" parent="Area2D" unique_id=27084448]

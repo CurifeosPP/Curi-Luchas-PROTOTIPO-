@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dvfw3nfkjkk4o" path="res://Scripts/battle_final.gd" id="1_sua3o"]
 [ext_resource type="Texture2D" uid="uid://ok4fiiclhlij" path="res://Fondos/Fondo final.png" id="2_34b7c"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34b7c"]
+size = Vector2(24, 1126)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1a33"]
 size = Vector2(1921, 27)
 
@@ -17,9 +20,17 @@ texture = ExtResource("2_34b7c")
 
 [node name="Colisiones fondo" type="StaticBody2D" parent="." unique_id=1036022200]
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colisiones fondo" unique_id=1331031705]
+position = Vector2(2, 553)
+shape = SubResource("RectangleShape2D_34b7c")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colisiones fondo" unique_id=1648345709]
 position = Vector2(967.5, 1086.5)
 shape = SubResource("RectangleShape2D_g1a33")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Colisiones fondo" unique_id=1145682200]
+position = Vector2(1935, 562)
+shape = SubResource("RectangleShape2D_34b7c")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=1106964564]
 position = Vector2(936, 2)

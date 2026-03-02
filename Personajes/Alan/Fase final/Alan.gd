@@ -14,6 +14,10 @@ extends CharacterBody2D
 
 @export var attack_damage: float = 10.0
 
+# 🔥 POSICIONES CORRECTAS DE HITBOX
+@export var hitbox_pos_right: Vector2 = Vector2(20, -30)
+@export var hitbox_pos_left: Vector2 = Vector2(-95, -30)
+
 # =========================
 # VIDA
 # =========================
@@ -44,9 +48,6 @@ var knockback_velocity: Vector2 = Vector2.ZERO
 @onready var hit_sound: AudioStreamPlayer2D = $HitSound
 @onready var hurt_sound: AudioStreamPlayer2D = $HurtSound
 
-var hitbox_pos_right: Vector2
-var hitbox_pos_left: Vector2
-
 # =========================
 # READY
 # =========================
@@ -58,13 +59,12 @@ func _ready():
 	attack_area.monitoring = false
 	attack_visual.visible = false
 
-	hitbox_pos_right = attack_area.position
-	hitbox_pos_left = Vector2(-160, -15)
-
 	health = max_health
 	update_health_bar()
 
 	attack_area.body_entered.connect(_on_attack_body_entered)
+
+	update_hitbox_position()
 
 # =========================
 # PHYSICS
@@ -104,14 +104,21 @@ func handle_movement():
 		facing_direction = direction
 		sprite.flip_h = (facing_direction == -1)
 
-		if facing_direction == 1:
-			attack_area.position = hitbox_pos_right
-		else:
-			attack_area.position = hitbox_pos_left
+		update_hitbox_position()
 
 	if Input.is_action_just_pressed(input_prefix + "saltar") and is_on_floor():
 		if not is_crouching:
 			velocity.y = jump_force
+
+# =========================
+# HITBOX
+# =========================
+
+func update_hitbox_position():
+	if facing_direction == 1:
+		attack_area.position = hitbox_pos_right
+	else:
+		attack_area.position = hitbox_pos_left
 
 # =========================
 # ACCIONES
@@ -173,10 +180,10 @@ func _on_attack_body_entered(body):
 		body.receive_hit(attack_damage, facing_direction)
 
 # =========================
-# RECIBIR DAÑO (VIDA)
+# RECIBIR DAÑO
 # =========================
 
-func receive_hit(damage: float, attacker_direction: int):
+func receive_hit(damage: float, _attacker_direction: int):
 
 	if is_blocking:
 		damage *= 0.3

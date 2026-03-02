@@ -9,9 +9,8 @@ enum Difficulty { EASY, NORMAL, HARD }
 @export var base_speed: float = 180.0
 @export var gravity: float = 1200.0
 @export var jump_force: float = -450.0
-@export var attack_range: float = 80.0
+@export var attack_range: float = 340.0
 @export var base_cooldown: float = 1.0
-
 @export var attack_damage: float = 10.0
 
 # =========================
@@ -19,7 +18,7 @@ enum Difficulty { EASY, NORMAL, HARD }
 # =========================
 
 @export var max_health: float = 100.0
-var health: float = 100.0
+var health: float
 
 # =========================
 # VARIABLES
@@ -28,7 +27,7 @@ var health: float = 100.0
 var speed: float
 var attack_cooldown: float
 
-var target: CharacterBody2D
+var target: CharacterBody2D = null
 var is_attacking := false
 var can_attack := true
 var facing_direction := 1
@@ -42,14 +41,17 @@ var knockback_velocity := Vector2.ZERO
 @onready var attack_area: Area2D = $Area2D
 @onready var attack_visual: Sprite2D = $Area2D/AttackVisual
 @onready var sprite: Sprite2D = $Sprite2D
-@onready var health_bar = get_node_or_null("CanvasLayer/HealthBar")
+@onready var health_bar = $CanvasLayer/HealthBar
 
 @onready var hit_sound: AudioStreamPlayer2D = $HitSound
 @onready var hurt_sound: AudioStreamPlayer2D = $HurtSound
 
-# POSICIONES
-var hitbox_pos_right: Vector2
-var hitbox_pos_left: Vector2
+# =========================
+# HITBOX MANUAL
+# =========================
+
+@export var hitbox_pos_right: Vector2 = Vector2(20, -30)
+@export var hitbox_pos_left: Vector2 = Vector2(-110, -30)
 
 # =========================
 # READY
@@ -62,15 +64,13 @@ func _ready():
 	attack_area.monitoring = false
 	attack_visual.visible = false
 
-	hitbox_pos_right = attack_area.position
-	hitbox_pos_left = Vector2(-160, -15)
-
 	health = max_health
 	update_health_bar()
 
 	attack_area.body_entered.connect(_on_attack_body_entered)
 
 	find_target()
+	update_hitbox_position()
 
 # =========================
 # DIFICULTAD
@@ -93,13 +93,17 @@ func configure_difficulty():
 			attack_cooldown = base_cooldown * 0.6
 
 # =========================
-# TARGET
+# BUSCAR JUGADOR
 # =========================
 
 func find_target():
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		target = players[0]
+		print("Target encontrado:", target.name)
+	else:
+		print("No hay target en grupo player")
+		target = null
 
 # =========================
 # PHYSICS
@@ -125,33 +129,43 @@ func _physics_process(delta):
 # =========================
 # IA
 # =========================
-
 func ai_logic():
 
 	var dx = target.global_position.x - global_position.x
 	var dy = target.global_position.y - global_position.y
+	
+	# 🔥 DISTANCIA SOLO EN X (ARREGLADO)
+	var distance = abs(dx)
 
-	# Dirección
+	print("Distancia X:", distance)
+
+	# DIRECCIÓN
 	if dx != 0:
 		facing_direction = sign(dx)
 		sprite.flip_h = facing_direction == -1
+		update_hitbox_position()
 
-		if facing_direction == 1:
-			attack_area.position = hitbox_pos_right
-		else:
-			attack_area.position = hitbox_pos_left
-
-	# Saltar si el jugador está arriba
+	# SALTO
 	if dy < -60 and is_on_floor():
 		velocity.y = jump_force
 
-	# Movimiento
-	if abs(dx) > attack_range:
+	# MOVIMIENTO / ATAQUE
+	if distance > attack_range:
 		velocity.x = facing_direction * speed
 	else:
 		velocity.x = 0
-		if can_attack:
+		
+		if can_attack and not is_attacking:
 			attack()
+# =========================
+# ACTUALIZAR HITBOX
+# =========================
+
+func update_hitbox_position():
+	if facing_direction == 1:
+		attack_area.position = hitbox_pos_right
+	else:
+		attack_area.position = hitbox_pos_left
 
 # =========================
 # ATAQUE
@@ -159,8 +173,7 @@ func ai_logic():
 
 func attack():
 
-	if is_attacking:
-		return
+	print("JESUS ESTA ATACANDO")
 
 	is_attacking = true
 	can_attack = false
@@ -184,6 +197,8 @@ func attack():
 
 func _on_attack_body_entered(body):
 
+	print("Colision con:", body.name)
+
 	if body == self:
 		return
 
@@ -202,11 +217,13 @@ func receive_hit(damage: float, attacker_direction: int):
 	health -= damage
 	update_health_bar()
 
+	knockback_velocity = Vector2(attacker_direction * 200, -200)
+
 	if health <= 0:
 		queue_free()
 
 # =========================
-# UI VIDA
+# UI
 # =========================
 
 func update_health_bar():
