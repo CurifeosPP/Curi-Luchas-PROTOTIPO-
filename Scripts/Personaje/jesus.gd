@@ -8,6 +8,7 @@ enum Difficulty { EASY, NORMAL, HARD }
 
 @export var base_speed: float = 180.0
 @export var gravity: float = 1200.0
+@export var jump_force: float = -450.0
 @export var attack_range: float = 80.0
 @export var base_cooldown: float = 1.0
 
@@ -16,7 +17,7 @@ enum Difficulty { EASY, NORMAL, HARD }
 @export var knockback_scaling: float = 5.0
 
 # =========================
-# VARIABLES DINÁMICAS
+# VARIABLES
 # =========================
 
 var speed: float
@@ -38,13 +39,16 @@ var knockback_velocity := Vector2.ZERO
 @onready var attack_visual: Sprite2D = $Area2D/AttackVisual
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var percent_label: Label = $CanvasLayer/PercentLabel
+@onready var floor_check: RayCast2D = $FloorCheck
 
 @onready var hit_sound: AudioStreamPlayer2D = $HitSound
 @onready var hurt_sound: AudioStreamPlayer2D = $HurtSound
 
-# POSICIONES HITBOX
+# POSICIONES BASE
 var hitbox_pos_right: Vector2
-var hitbox_pos_left: Vector2 = Vector2(-160, -15)
+var hitbox_pos_left: Vector2
+var raycast_pos_right: float
+var raycast_pos_left: float
 
 # =========================
 # READY
@@ -56,12 +60,18 @@ func _ready():
 
 	attack_area.monitoring = false
 	attack_visual.visible = false
-	attack_area.body_entered.connect(_on_attack_body_entered)
 
-	# Guardamos posición original derecha
+	# 🔥 SISTEMA EXACTO COMO ALAN
 	hitbox_pos_right = attack_area.position
+	hitbox_pos_left = Vector2(-160, -15)
+
+	# 🔥 Guardamos posición base del raycast
+	raycast_pos_right = floor_check.position.x
+	raycast_pos_left = -abs(raycast_pos_right)
 
 	update_percent_label()
+	attack_area.body_entered.connect(_on_attack_body_entered)
+
 	find_target()
 
 # =========================
@@ -71,6 +81,7 @@ func _ready():
 func configure_difficulty():
 
 	match GameData.jesus_difficulty:
+
 		GameData.Difficulty.EASY:
 			speed = base_speed * 0.7
 			attack_cooldown = base_cooldown * 1.5
@@ -102,7 +113,9 @@ func _physics_process(delta):
 		find_target()
 		return
 
-	apply_gravity(delta)
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
 	ai_logic()
 
 	if knockback_velocity.length() > 0:
@@ -112,32 +125,50 @@ func _physics_process(delta):
 	move_and_slide()
 
 # =========================
-# GRAVEDAD
-# =========================
-
-func apply_gravity(delta):
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
-# =========================
-# IA
+# IA MEJORADA
 # =========================
 
 func ai_logic():
 
-	var distance = target.global_position.x - global_position.x
+	var dx = target.global_position.x - global_position.x
+	var dy = target.global_position.y - global_position.y
 
-	if distance != 0:
-		facing_direction = sign(distance)
+	# -------------------------
+	# DIRECCIÓN
+	# -------------------------
+
+	if dx != 0:
+		facing_direction = sign(dx)
 		sprite.flip_h = facing_direction == -1
 
-		# 🔥 MOVER HITBOX SEGÚN DIRECCIÓN (IGUAL QUE ALAN)
 		if facing_direction == 1:
 			attack_area.position = hitbox_pos_right
+			floor_check.position.x = raycast_pos_right
 		else:
 			attack_area.position = hitbox_pos_left
+			floor_check.position.x = raycast_pos_left
 
-	if abs(distance) > attack_range:
+	# -------------------------
+	# NO CAERSE
+	# -------------------------
+
+	if is_on_floor():
+		if not floor_check.is_colliding():
+			velocity.x = 0
+			return
+
+	# -------------------------
+	# SALTAR SI ESTÁ ARRIBA
+	# -------------------------
+
+	if dy < -60 and is_on_floor():
+		velocity.y = jump_force
+
+	# -------------------------
+	# MOVIMIENTO
+	# -------------------------
+
+	if abs(dx) > attack_range:
 		velocity.x = facing_direction * speed
 	else:
 		velocity.x = 0
@@ -179,7 +210,7 @@ func _on_attack_body_entered(body):
 		return
 
 	if body.has_method("receive_hit"):
-		hit_sound.play() # 🔊 sonido al pegar
+		hit_sound.play()
 		body.receive_hit(attack_damage, facing_direction)
 
 # =========================
@@ -188,7 +219,7 @@ func _on_attack_body_entered(body):
 
 func receive_hit(damage: float, attacker_direction: int):
 
-	hurt_sound.play() # 🔊 sonido al recibir
+	hurt_sound.play()
 
 	percent += damage
 	update_percent_label()

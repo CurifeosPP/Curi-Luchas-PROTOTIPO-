@@ -31,6 +31,11 @@ position = Vector2(65, 4.000004)
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("4_ku51b")
 
+[node name="FloorCheck" type="RayCast2D" parent="." unique_id=2004896607]
+position = Vector2(80, 26)
+scale = Vector2(16.483599, 16.483599)
+target_position = Vector2(0, 40)
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2109731419]
 scale = Vector2(4.06, 4.06)
 texture = ExtResource("3_t1lkt")
