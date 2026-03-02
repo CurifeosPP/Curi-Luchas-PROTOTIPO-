@@ -10,7 +10,7 @@ enum Difficulty { EASY, NORMAL, HARD }
 @export var gravity: float = 1200.0
 @export var jump_force: float = -450.0
 @export var attack_range: float = 340.0
-@export var base_cooldown: float = 1.0
+@export var base_cooldown: float = 0.8
 @export var attack_damage: float = 10.0
 
 # =========================
@@ -89,8 +89,8 @@ func configure_difficulty():
 			attack_cooldown = base_cooldown
 
 		GameData.Difficulty.HARD:
-			speed = base_speed * 1.3
-			attack_cooldown = base_cooldown * 0.6
+			speed = base_speed * 1.5
+			attack_cooldown = base_cooldown * 0.5
 
 # =========================
 # BUSCAR JUGADOR
@@ -136,8 +136,6 @@ func ai_logic():
 	
 	# 🔥 DISTANCIA SOLO EN X (ARREGLADO)
 	var distance = abs(dx)
-
-	print("Distancia X:", distance)
 
 	# DIRECCIÓN
 	if dx != 0:

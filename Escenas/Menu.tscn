@@ -56,7 +56,13 @@ text = "JUGAR!"
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_o2l53")
-text = "Opciones"
+text = "Cambios"
+
+[node name="Opciones2" type="Button" parent="VBoxContainer" unique_id=846731386]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_o2l53")
+text = "Github"
 
 [node name="Salir" type="Button" parent="VBoxContainer" unique_id=2146403485]
 layout_mode = 2
@@ -69,10 +75,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 411.0
-offset_top = 4.0
-offset_right = -247.0
-offset_bottom = -868.0
+offset_left = 409.0
+offset_top = -29.0
+offset_right = -249.0
+offset_bottom = -901.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 150
@@ -83,15 +89,25 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 526.0
-offset_top = 214.0
-offset_right = -369.0
-offset_bottom = -766.0
+offset_left = 524.0
+offset_top = 181.0
+offset_right = -371.0
+offset_bottom = -799.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 70
 text = "(Prototipo de cuatro dias)"
 
+[node name="HistoryLabel" type="Label" parent="." unique_id=1646879770]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 710.0
+offset_right = 449.0
+offset_bottom = 779.0
+theme_override_font_sizes/font_size = 50
+text = "VICTORIAS"
+
 [connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/Opciones2" to="." method="_on_opciones_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

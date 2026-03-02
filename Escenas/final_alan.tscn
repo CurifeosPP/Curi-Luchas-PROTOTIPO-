@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cpl684ob6tfjp"]
+
+[ext_resource type="Script" uid="uid://blfoquw0afpa5" path="res://Scripts/cinematica.gd" id="1_x7us8"]
+[ext_resource type="Texture2D" uid="uid://nogrblpp4obm" path="res://Fondos/Screenshot 2026-02-26 200642.png" id="2_atyam"]
+
+[node name="Node2D" type="Node2D" unique_id=185915566]
+script = ExtResource("1_x7us8")
+dialogue_path = "res://Dialogo/final alan.dialogue"
+next_scene_path = "res://Escenas/Menu.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=911944903]
+position = Vector2(961.74994, 493.25)
+scale = Vector2(0.8049748, 0.77349627)
+texture = ExtResource("2_atyam")
+
+[node name="SkipLabel" type="Label" parent="." unique_id=1170928937]
+offset_left = 98.0
+offset_top = 21.0
+offset_right = 164.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 25
+text = "Espera..."

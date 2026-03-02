@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3ni00nx7263l"]
 
 [ext_resource type="Script" uid="uid://30rgirwfptg6" path="res://Personajes/Alan/Fase final/Alan.gd" id="1_tfjik"]
-[ext_resource type="Texture2D" uid="uid://dj3ygbeh6yhsv" path="res://Sprites temporales/28-281483_batman-pow-clipart-comic-book-bubbles-pow.png" id="2_s48e1"]
+[ext_resource type="Texture2D" uid="uid://dj3ygbeh6yhsv" path="res://Personajes/28-281483_batman-pow-clipart-comic-book-bubbles-pow.png" id="2_s48e1"]
 [ext_resource type="Texture2D" uid="uid://wtoxkdq6u5kk" path="res://Personajes/Alan/Fase final/deproNAI.png" id="2_xhpbg"]
 [ext_resource type="AudioStream" uid="uid://clynv77wovv7o" path="res://Sondiso golpes/GolpeAire.wav" id="4_66of6"]
 [ext_resource type="AudioStream" uid="uid://bou1fa2pmsfjh" path="res://Sondiso golpes/Golpe.wav" id="5_ia678"]

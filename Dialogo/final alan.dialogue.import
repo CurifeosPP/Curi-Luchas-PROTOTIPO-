@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bo7vdbnoxmn1y"
+path="res://.godot/imported/final alan.dialogue-970469ca951ccb5ab4fdd46566e8babb.tres"
+
+[deps]
+
+source_file="res://Dialogo/final alan.dialogue"
+dest_files=["res://.godot/imported/final alan.dialogue-970469ca951ccb5ab4fdd46566e8babb.tres"]
+
+[params]
+
+defaults=true

@@ -9,7 +9,6 @@ var jesus_scene = preload("res://Personajes/Jesus/Fase Final/JesusFINAL.tscn")
 
 var p1
 var p2
-
 var fight_ended := false
 
 func _ready():
@@ -26,10 +25,6 @@ func spawn_players():
 	add_child(p2)
 	p2.global_position = p2_spawn.global_position
 
-	# 🔥 YA NO ACTIVAMOS MODO VIDA
-	# Porque estos personajes ya están hechos solo para vida
-
-	# 🔥 ESCUCHAR MUERTE
 	p1.tree_exited.connect(_on_player_dead.bind("JESUS"))
 	p2.tree_exited.connect(_on_player_dead.bind("ALAN"))
 
@@ -40,7 +35,26 @@ func _on_player_dead(winner_name):
 
 	fight_ended = true
 
+	GameData.add_serious_round(winner_name)
+
 	if result_label:
 		result_label.text = "🔥 " + winner_name + " GANA 🔥"
 
-	Fade.change_scene("res://Escenas/menu.tscn")
+	await get_tree().create_timer(1.5).timeout
+
+	# 🔥 VERIFICAR SI ALGUIEN LLEGÓ A 3
+	var final_winner = GameData.reached_three()
+
+	if final_winner != "":
+		# 🔥 FINAL DEFINITIVO
+		if final_winner == "ALAN":
+			Fade.change_scene("res://Escenas/final_alan.tscn")
+		else:
+			Fade.change_scene("res://Escenas/final_jesus.tscn")
+		return
+
+	# 🔥 SI NO LLEGÓ A 3, VERIFICAR EMPATE
+	if GameData.is_tied():
+		Fade.change_scene("res://Escenas/battle_final.tscn")
+	else:
+		Fade.change_scene("res://Escenas/menu.tscn")

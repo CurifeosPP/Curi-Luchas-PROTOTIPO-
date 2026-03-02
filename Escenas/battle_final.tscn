@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d03s6jj2buq7f"]
 
-[ext_resource type="Script" uid="uid://dvfw3nfkjkk4o" path="res://Scripts/battle_final.gd" id="1_sua3o"]
+[ext_resource type="Script" uid="uid://dvfw3nfkjkk4o" path="res://Scripts/Peleas!/battle_final.gd" id="1_sua3o"]
 [ext_resource type="Texture2D" uid="uid://ok4fiiclhlij" path="res://Fondos/Fondo final.png" id="2_34b7c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34b7c"]

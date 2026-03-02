@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dtdo30dwfeqrt"
+path="res://.godot/imported/final jesus.dialogue-95c90b66a0cc8e1c80ace61140e3612d.tres"
+
+[deps]
+
+source_file="res://Dialogo/final jesus.dialogue"
+dest_files=["res://.godot/imported/final jesus.dialogue-95c90b66a0cc8e1c80ace61140e3612d.tres"]
+
+[params]
+
+defaults=true
