@@ -14,7 +14,7 @@ radius = 29.0
 height = 124.0
 
 [node name="Alan" type="CharacterBody2D" unique_id=1306641810]
-position = Vector2(517, 717)
+position = Vector2(475.765, 701.87)
 script = ExtResource("1_oobaa")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2128198803]
@@ -49,9 +49,9 @@ shape = SubResource("CapsuleShape2D_5w5gp")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=712995736]
 
 [node name="PercentLabel" type="Label" parent="CanvasLayer" unique_id=632873457]
-offset_left = 572.0
-offset_top = 1028.0
-offset_right = 646.0
-offset_bottom = 1051.0
+offset_left = 289.0
+offset_top = 670.0
+offset_right = 363.0
+offset_bottom = 693.0
 text = "ALAN: 0%"
 metadata/_edit_use_anchors_ = true

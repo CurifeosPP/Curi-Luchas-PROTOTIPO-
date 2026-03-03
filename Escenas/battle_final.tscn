@@ -2,46 +2,60 @@
 
 [ext_resource type="Script" uid="uid://dvfw3nfkjkk4o" path="res://Scripts/Peleas!/battle_final.gd" id="1_sua3o"]
 [ext_resource type="Texture2D" uid="uid://ok4fiiclhlij" path="res://Fondos/Fondo final.png" id="2_34b7c"]
+[ext_resource type="Texture2D" uid="uid://cj0iy86qhte8c" path="res://BOTONES/izquierda.png" id="3_h2ll5"]
+[ext_resource type="Texture2D" uid="uid://dma8ivmljf71r" path="res://BOTONES/derecha.png" id="4_nn7yf"]
+[ext_resource type="Texture2D" uid="uid://c10gpmvydmifq" path="res://BOTONES/Arriba.png" id="5_kc5io"]
+[ext_resource type="Texture2D" uid="uid://bt7tufjk5nc6q" path="res://BOTONES/Golpear.png" id="6_wqmid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34b7c"]
-size = Vector2(24, 1126)
+size = Vector2(29.396729, 1630.3914)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1a33"]
-size = Vector2(1921, 27)
+size = Vector2(2921.589, 43.97644)
 
 [node name="BattleFinal" type="Node2D" unique_id=1974774518]
 script = ExtResource("1_sua3o")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1507602073]
-offset_left = 5.0
+offset_left = -6.0
 offset_right = 1925.0
 offset_bottom = 1080.0
+scale = Vector2(0.665, 0.665)
 texture = ExtResource("2_34b7c")
 
 [node name="Colisiones fondo" type="StaticBody2D" parent="." unique_id=1036022200]
+scale = Vector2(0.665, 0.665)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Colisiones fondo" unique_id=1331031705]
 position = Vector2(2, 553)
+scale = Vector2(0.665, 0.665)
 shape = SubResource("RectangleShape2D_34b7c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colisiones fondo" unique_id=1648345709]
-position = Vector2(967.5, 1086.5)
+position = Vector2(963.90985, 1092.1448)
+scale = Vector2(0.6650001, 0.6650001)
 shape = SubResource("RectangleShape2D_g1a33")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Colisiones fondo" unique_id=1145682200]
-position = Vector2(1935, 562)
+position = Vector2(1931.5791, 552.63153)
+scale = Vector2(0.6650001, 0.6650001)
 shape = SubResource("RectangleShape2D_34b7c")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=1106964564]
 position = Vector2(936, 2)
+scale = Vector2(0.665, 0.665)
 
 [node name="P1Spawn" type="Node2D" parent="SpawnPoints" unique_id=1591652177]
-position = Vector2(-673, 737)
+position = Vector2(-1045.1127, 744.3608)
+scale = Vector2(0.665, 0.665)
 
 [node name="P2Spawn" type="Node2D" parent="SpawnPoints" unique_id=945013048]
-position = Vector2(694, 726)
+position = Vector2(212.03009, 727.8195)
+scale = Vector2(0.665, 0.665)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1477653692]
+scale = Vector2(0.665, 0.665)
+transform = Transform2D(0.665, 0, 0, 0.665, 0, 0)
 
 [node name="ResultLabel" type="Label" parent="CanvasLayer" unique_id=189696209]
 offset_left = 795.0
@@ -49,3 +63,36 @@ offset_top = 135.0
 offset_right = 1201.0
 offset_bottom = 231.0
 theme_override_font_sizes/font_size = 50
+
+[node name="Control" type="Control" parent="." unique_id=968020388]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.82, 0.82)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control" unique_id=703379395]
+position = Vector2(62.19512, 625.72864)
+scale = Vector2(7.6, 7.6)
+texture_normal = ExtResource("3_h2ll5")
+action = "p1_izquierda"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Control" unique_id=1642361226]
+position = Vector2(300.14874, 618.2927)
+scale = Vector2(7.6, 7.6)
+texture_normal = ExtResource("4_nn7yf")
+action = "p1_derecha"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Control" unique_id=2064742907]
+position = Vector2(1218.2927, 408.53665)
+scale = Vector2(7.6, 7.6)
+texture_normal = ExtResource("5_kc5io")
+action = "p1_saltar"
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Control" unique_id=728614171]
+position = Vector2(1312.1953, 615.85364)
+scale = Vector2(7.6, 7.6)
+texture_normal = ExtResource("6_wqmid")
+action = "p1_atacar"

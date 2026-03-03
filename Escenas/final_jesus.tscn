@@ -8,9 +8,9 @@ script = ExtResource("1_545pn")
 dialogue_path = "res://Dialogo/final jesus.dialogue"
 next_scene_path = "res://Escenas/Menu.tscn"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=911944903]
-position = Vector2(961.74994, 493.25)
-scale = Vector2(0.8049748, 0.77349627)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1256782243]
+position = Vector2(638.75006, 321.00003)
+scale = Vector2(0.5378344, 0.5263158)
 texture = ExtResource("2_evlf8")
 
 [node name="SkipLabel" type="Label" parent="." unique_id=163217941]

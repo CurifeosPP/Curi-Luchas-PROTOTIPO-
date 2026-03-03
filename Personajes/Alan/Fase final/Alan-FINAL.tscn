@@ -13,8 +13,8 @@ size = Vector2(93, 92.5)
 size = Vector2(39.742413, 120.73137)
 
 [node name="AlanFINAL" type="CharacterBody2D" unique_id=1306641810]
-position = Vector2(517, 717)
-scale = Vector2(5.435, 5.435)
+position = Vector2(293.96, 432.955)
+scale = Vector2(4, 4)
 script = ExtResource("1_tfjik")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2128198803]

@@ -14,8 +14,8 @@ radius = 29.0
 height = 124.0
 
 [node name="JesusFINAL" type="CharacterBody2D" unique_id=1306641810]
-position = Vector2(1655.245, 717)
-scale = Vector2(5.435, 5.435)
+position = Vector2(1098.965, 415.57)
+scale = Vector2(4, 4)
 script = ExtResource("1_fckso")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2128198803]

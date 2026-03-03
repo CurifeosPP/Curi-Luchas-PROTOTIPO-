@@ -7,14 +7,14 @@
 script = ExtResource("1_8t7me")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=911944903]
-position = Vector2(961.74994, 493.25)
-scale = Vector2(0.8049748, 0.77349627)
+position = Vector2(638.75006, 321.00003)
+scale = Vector2(0.5378344, 0.5263158)
 texture = ExtResource("2_2kbp4")
 
 [node name="SkipLabel" type="Label" parent="." unique_id=888062596]
-offset_left = 98.0
-offset_top = 21.0
-offset_right = 164.0
-offset_bottom = 44.0
+offset_left = 24.0
+offset_top = -94.0
+offset_right = 126.0
+offset_bottom = -59.0
 theme_override_font_sizes/font_size = 25
 text = "Espera..."

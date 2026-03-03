@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://brcuxsrq4gtha" path="res://Scripts/Peleas!/battle.gd" id="1_3kche"]
 [ext_resource type="Texture2D" uid="uid://1142hsd4akvb" path="res://Fondos/Fondou.png" id="1_53g7e"]
+[ext_resource type="Texture2D" uid="uid://cj0iy86qhte8c" path="res://BOTONES/izquierda.png" id="3_j6n5j"]
+[ext_resource type="Texture2D" uid="uid://dma8ivmljf71r" path="res://BOTONES/derecha.png" id="4_khkdg"]
+[ext_resource type="Texture2D" uid="uid://c10gpmvydmifq" path="res://BOTONES/Arriba.png" id="5_kmd4x"]
+[ext_resource type="Texture2D" uid="uid://bt7tufjk5nc6q" path="res://BOTONES/Golpear.png" id="6_l2qs3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_53g7e"]
 size = Vector2(1140.5, 78)
@@ -10,17 +14,22 @@ size = Vector2(1140.5, 78)
 size = Vector2(490, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kche"]
+size = Vector2(2501.0518, 89.35437)
 
 [node name="Battle" type="Node2D" unique_id=1680270957]
+scale = Vector2(0.82, 0.82)
 script = ExtResource("1_3kche")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1680069340]
-offset_left = 5.0
-offset_right = 1925.0
+offset_left = -5.0
+offset_right = 1915.0
 offset_bottom = 1080.0
+scale = Vector2(0.82, 0.82)
 texture = ExtResource("1_53g7e")
+metadata/_edit_use_anchors_ = true
 
 [node name="Colisiones fondo" type="StaticBody2D" parent="." unique_id=1700091313]
+scale = Vector2(0.82, 0.82)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colisiones fondo" unique_id=1299202783]
 position = Vector2(964.75, 825)
@@ -32,25 +41,67 @@ shape = SubResource("RectangleShape2D_5w5gp")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=652633002]
 position = Vector2(936, 2)
+scale = Vector2(0.82, 0.82)
 
 [node name="P1Spawn" type="Node2D" parent="SpawnPoints" unique_id=221704827]
-position = Vector2(-414, 649)
+position = Vector2(-592.683, 678.7031)
 
 [node name="P2Spawn" type="Node2D" parent="SpawnPoints" unique_id=1967935997]
-position = Vector2(499, 662)
+position = Vector2(271.38608, 681.67755)
 
 [node name="DeathZone" type="Area2D" parent="." unique_id=945113708]
-position = Vector2(919, 1080)
+position = Vector2(745.021, 856.331)
+scale = Vector2(0.82, 0.82)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=1096450627]
+position = Vector2(1.4872375, 0.00012636185)
+scale = Vector2(0.82, 0.82)
 shape = SubResource("RectangleShape2D_3kche")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1559470989]
+scale = Vector2(0.82, 0.82)
+transform = Transform2D(0.82, 0, 0, 0.82, 0, 0)
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=499772510]
-offset_left = 699.0
-offset_top = 973.0
-offset_right = 1105.0
-offset_bottom = 1069.0
+offset_left = 623.1708
+offset_top = 747.561
+offset_right = 1029.1708
+offset_bottom = 843.561
+scale = Vector2(0.82, 0.82)
 theme_override_font_sizes/font_size = 70
 text = "------------------"
+
+[node name="Control" type="Control" parent="." unique_id=1306623663]
+layout_mode = 3
+anchor_right = 1.2210001
+anchor_bottom = 1.22
+offset_right = 343.72327
+offset_bottom = 192.39124
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.82, 0.82)
+metadata/_edit_use_anchors_ = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control" unique_id=1292499192]
+position = Vector2(74.360504, 786.7341)
+scale = Vector2(7.6, 7.6)
+texture_normal = ExtResource("3_j6n5j")
+action = "p1_izquierda"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Control" unique_id=221911420]
+position = Vector2(312.31412, 779.29816)
+scale = Vector2(7.6, 7.6)
+texture_normal = ExtResource("4_khkdg")
+action = "p1_derecha"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Control" unique_id=1766011649]
+position = Vector2(1497.6207, 508.6259)
+scale = Vector2(7.6, 7.6)
+texture_normal = ExtResource("5_kmd4x")
+action = "p1_saltar"
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Control" unique_id=1929124223]
+position = Vector2(1642.0001, 750)
+scale = Vector2(7.6, 7.6)
+texture_normal = ExtResource("6_l2qs3")
+action = "p1_atacar"

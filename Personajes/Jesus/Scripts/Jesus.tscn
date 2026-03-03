@@ -14,7 +14,7 @@ radius = 29.0
 height = 124.0
 
 [node name="Jesus" type="CharacterBody2D" unique_id=1306641810]
-position = Vector2(1685.74, 717)
+position = Vector2(1014.55, 503.29)
 up_direction = Vector2(1, 0)
 script = ExtResource("1_k12tf")
 
@@ -57,9 +57,9 @@ shape = SubResource("CapsuleShape2D_5w5gp")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1996490807]
 
 [node name="PercentLabel" type="Label" parent="CanvasLayer" unique_id=1590619301]
-offset_left = 1534.0
-offset_top = 1033.0
-offset_right = 1608.0
-offset_bottom = 1056.0
+offset_left = 994.0
+offset_top = 672.0
+offset_right = 1068.0
+offset_bottom = 695.0
 text = "ALAN: 0%"
 metadata/_edit_use_anchors_ = true

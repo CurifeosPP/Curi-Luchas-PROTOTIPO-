@@ -26,25 +26,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -3.0
-offset_right = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_xe2ru")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1367378545]
 layout_mode = 1
-anchors_preset = 14
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 713.0
-offset_top = -191.0
-offset_right = -737.0
-offset_bottom = 316.0
-grow_horizontal = 2
+offset_top = -255.0
+offset_right = 292.0
+offset_bottom = 255.0
 grow_vertical = 2
-theme_override_constants/separation = 70
+theme_override_constants/separation = 40
 
 [node name="Jugar" type="Button" parent="VBoxContainer" unique_id=487423959]
 layout_mode = 2
@@ -70,40 +65,32 @@ theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_425bc")
 text = "Salir"
 
-[node name="TextEdit" type="TextEdit" parent="." unique_id=1470331262]
+[node name="HistoryLabel2" type="Label" parent="." unique_id=319310344]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 409.0
-offset_top = -29.0
-offset_right = -249.0
-offset_bottom = -901.0
+offset_left = 503.0
+offset_top = 6.0
+offset_right = -29.0
+offset_bottom = -573.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 150
-text = "CURI LUCHAS!"
-
-[node name="TextEdit2" type="TextEdit" parent="." unique_id=1687875339]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 524.0
-offset_top = 181.0
-offset_right = -371.0
-offset_bottom = -799.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 70
-text = "(Prototipo de cuatro dias)"
+theme_override_font_sizes/font_size = 50
+text = "                 Curi luchas!
+(Prototio de 4 dias, MOBILE ED)"
 
 [node name="HistoryLabel" type="Label" parent="." unique_id=1646879770]
-layout_mode = 0
-offset_left = 196.0
-offset_top = 710.0
-offset_right = 449.0
-offset_bottom = 779.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 757.0
+offset_top = 264.0
+offset_right = -220.0
+offset_bottom = -387.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "VICTORIAS"
 
